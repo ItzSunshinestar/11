@@ -1,0 +1,26 @@
+import random
+
+attempts = random.randint(2,8)
+print ("Guess my number!")
+print ("You have", int(attempts),"attempts.")
+my_number = random.randint(1,100)
+tries = 0
+while  attempts != 0:
+    number = input ("I'm thinking of a number from 1 to 100. ")
+    if int(number) > int(my_number):
+        attempts = int(attempts) - 1
+        tries = int(tries) + 1
+        print ("Too high!")
+    elif int(number) < int(my_number):
+        attempts = int(attempts) - 1
+        tries = int(tries) + 1
+        print ("Too low!")
+    elif int(number) == int(my_number):
+        print ("You guessed correct!")
+        print ("You guessed in... ", int(attempts))
+        break
+    else:
+        print ("error..")
+if attempts == 0:
+    print("You lost! the number was... ", int(my_number))
+ 
