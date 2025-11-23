@@ -1,0 +1,78 @@
+Money = 1000
+
+class Product:
+    def __init__(self):
+        self.name1 = "Milk"
+        self.name2 = "Bread"
+        self.name3 = "Egg"
+        self.name4 = "Chips"
+        self.name5 = "Buckwheat"
+
+        self.price1 = 60
+        self.price2 = 30
+        self.price3 = 80
+        self.price4 = 50
+        self.price5 = 40
+
+        self.present1 = True
+        self.present2 = True
+        self.present3 = True
+        self.present4 = True
+        self.present5 = True
+
+class Cart:
+    def __init__(self):
+        self.num1 = None
+        self.num2 = None
+        self.num3 = None
+        self.num4 = None
+        self.num5 = None
+
+product = Product()
+cart = Cart()
+
+print("Hello! Welcome to the shop.")
+while True:
+    cho = input("What do you want to do? Buy something (1), See your cart and money (2), Leave (3): ")
+    if cho == "1":
+        print("Available products:")
+        print(product.name1, "-", product.price1, "-", product.present1)
+        print(product.name2, "-", product.price2, "-", product.present2)
+        print(product.name3, "-", product.price3, "-", product.present3)
+        print(product.name4, "-", product.price4, "-", product.present4)
+        print(product.name5, "-", product.price5, "-", product.present5)
+        buy = input ("Put the number of what you want to buy (1 to 5) ")
+        if int(buy) == 1 and int(Money) > 60:
+            print("You bought:", product.name1)
+            Money = Money - product.price1
+            cart.num1 = "Milk"
+        elif int(buy) == 2 and int(Money) > 30:
+            print("You bought:", product.name2)
+            Money = Money - product.price2
+            cart.num2 = "Bread"
+        elif int(buy) == 3 and int(Money) > 80:
+            print("You bought:", product.name3)
+            Money = Money - product.price3
+            cart.num3 = "Egg"
+        elif int(buy) == 4 and int(Money) > 50:
+            print("You bought:", product.name4)
+            Money = Money - product.price4
+            cart.num4 = "Chips"
+        elif int(buy) == 5 and int(Money) > 40:
+            print("You bought:", product.name5)
+            Money = Money - product.price5
+            cart.num5 = "Buckwheat"
+        elif int(Money) <=0:
+            print ("You don't have money!")
+        else:
+            print ("error")
+    
+    elif cho == "2":
+        print("Your money:", Money)
+        print("Your cart:", cart.__dict__)
+    
+    elif cho == "3":
+        print("Goodbye!")
+        break
+    else:
+        print("error")
