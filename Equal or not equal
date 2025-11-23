@@ -1,0 +1,13 @@
+a = input ("Number a? ")
+b = input ("Number b? ")
+if a < b:
+    print ("Number B:", int(b))
+    print ("B is bigger than A")
+elif a > b:
+    print ("Number A:", int(a))
+    print ("A is bigger than B")
+elif a == b:
+    print ("Number A:", int(a))
+    print ("They are equal.")
+else:
+    print ("error")
