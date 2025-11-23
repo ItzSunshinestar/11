@@ -1,0 +1,31 @@
+## name = "Anya"
+## day = 13
+## print(f"Today is friday {day}, {day:7d}. Happy birthday, {name}! You are {len(name)} years old!")
+## len - lenght of variable
+## {variable}
+## fomrmatting of рядок - f
+## 7d - vidstan vid vsuojo inshogo
+
+
+
+## name = "Nick"
+## print(f"{name:15} launched his startup")
+## 15 for length from other words
+
+
+##income = 202356
+##costs = 124365
+##profit = income/costs-1
+##print(f"This month the profit was {profit:10.3%}")
+
+#day = 13
+#month = 10
+#print("Today is friday, {:100}.".format(day))
+#print("Today is %d.%s, {:100}.".format(day))
+print("Hello\bWorld!")
+# \r видаляє перед ним
+# \n - enter
+# \b deletes letter
+# \
+
+
