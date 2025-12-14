@@ -1,0 +1,44 @@
+import random
+import tkinter as tk
+
+root = tk.Tk()
+root.title("Rock Paper Scissors")
+root.geometry("1000x600")
+root.resizable(False, False)
+root.iconbitmap("rock-paper-scissors.ico")
+imgR = tk.PhotoImage(file="R.png")
+imgP = tk.PhotoImage(file="P.png")
+imgS = tk.PhotoImage(file="S.png")
+player_score = 0
+computer_score = 0
+l1 = tk.Label(root, text="Rock Paper Scissors", font=("Comic Sans MS", 20))
+l1.pack()
+win = tk.Label(root, text="Make your choice!", font=("Comic Sans MS", 14))
+win.pack()
+score = tk.Label(root, text="Player: 0 | Computer: 0", font=("Comic Sans MS", 14))
+score.pack()
+def game(player_choice):
+    global player_score
+    global computer_score
+    computer_choice = random.choice(["rock", "paper", "scissors"])
+    if player_choice == computer_choice:
+        result = "Both win"
+    elif (player_choice == "rock" and computer_choice == "scissors") or \
+         (player_choice == "paper" and computer_choice == "rock") or \
+         (player_choice == "scissors" and computer_choice == "paper"):
+        result = "Player Wins"
+        player_score += 1
+    else:
+        result = "Computer Wins"
+        computer_score += 1
+    win.config(
+        text=f"Player: {player_choice.upper()} | Computer: {computer_choice.upper()}\n{result}")
+    score.config(
+        text=f"Player: {player_score} | Computer: {computer_score}")
+frame = tk.Frame(root)
+frame.pack()
+tk.Button(frame, image=imgR, command=lambda: game("rock")).grid(row=0, column=0)
+tk.Button(frame, image=imgP, command=lambda: game("paper")).grid(row=0, column=1)
+tk.Button(frame, image=imgS, command=lambda: game("scissors")).grid(row=0, column=2)
+root.mainloop()
+# трішки треба було погуглити щоб це зробити😅
